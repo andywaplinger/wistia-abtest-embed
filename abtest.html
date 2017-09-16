@@ -1,0 +1,85 @@
+<html>
+<head>
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <link rel='stylesheet' href='css/main.css' />
+  <link rel='stylesheet' href='css/forms.css' />
+  <link rel='stylesheet' href='css/toastr.css' />
+
+  <script src="https://unpkg.com/toastr@2.1.2"></script>
+  <script src="https://unpkg.com/clipboard@1.6.0/dist/clipboard.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.4.0/balloon.min.css">
+
+  <script src="js/abtest.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Wistia A/B Test Embed Code</h1>
+      <h5>Automatically generate an embed code for A/B testing Wistia videos</h5>
+      <!--<div class="explainer">
+        <div class="explainer-text">
+          <ol>
+            <li>Enter the URL of Wistia video A</li>
+            <li>Enter the URL of Wistia video B</li>
+          </ol>
+        </div>
+      </div>-->
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- INPUT VIDEO URLS -->
+      <form action="index.html" method="post">
+        <h3>Video A</h4>
+        <div class="input-field">
+          <input required id="wistiaURLA" class="dynamic" type="text" name="wistiaURLA">
+        </div>
+        <div class="input-field">
+          <h3>Video B</h3>
+          <input required id="wistiaURLB" class="dynamic" type="text" name="wistiaURLB">
+        </div>
+        <button cta-label="Get embed code" class="button" id="getEmbed" disabled="true" type="button" name="getEmbed">Get embed code</button>
+      </form>
+
+      <!-- DISPLAY EMBED URL -->
+      <div data-clipboard-target="#url" cta-label="Embed URL Copied" data-balloon="Click to copy" data-balloon-pos="up" class="clipboard code-block" aria-label="Click to copy">
+        <pre>
+          <code id="url">Embed code</code>
+        </pre>
+      </div>
+
+      <div class="video-group">
+        <div class="video">
+          <h3 id="vidA"></h3>
+          <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
+          <div class="wistia_responsive_wrapper style="height: 100%; left: 0; position: absolute; top: 0; width: 100%;">
+            <div id="videoEmbedA" class="wistia_embed videoFoam=true" style="height: 100%; width: 100%;"></div>
+          </div>
+        </div>
+
+        <div class="video">
+          <h3 id="vidB"></h3>
+          <div class="wistia_responsive_wrapper style="height: 100%; left: 0; position: absolute; top: 0; width: 100%;">
+            <div id="videoEmbedB" class="wistia_embed videoFoam=true" style="height: 100%; width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var clipboard = new Clipboard('.clipboard');
+    clipboard.on('success', function(e) {
+      e.clearSelection();
+      toastr.success('Copied to clipboard');
+    });
+  </script>
+</body>
+</html>
