@@ -1,3 +1,5 @@
+// IGNORE THIS FILE. IT ONLY EXISTS TO BE COMPATIBLE WITH WORDPRESS.
+
 // TOASTR OPTIONS
 toastr.options = {
   newestOnTop: true,
@@ -6,7 +8,6 @@ toastr.options = {
 };
 
 // LISTENER
-$.noConflict();
 jQuery(document).ready(function ($) {
   $('input').change(function () {
     $('#getEmbed').attr('disabled', $('input[required]').toArray().some(function (el) {
