@@ -31,7 +31,7 @@ function getEmbedUrl() {
   function createEmbedUrl(hashedIdA,hashedIdB) {
 
     // DISPLAY EMBED URL
-    document.getElementById("url").innerHTML =`
+    document.getElementsByClassName("url").innerHTML =`
 &lt;script src="https://fast.wistia.com/assets/external/E-v1.js" async&gt;&lt;/script&gt;
 &lt;div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"&gt;
   &lt;div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"&gt;
@@ -47,15 +47,15 @@ function getEmbedUrl() {
 &lt;/script&gt;`;
     
     // DISPLAY VIDEO EMBEDS
-    document.getElementById("vidA").innerHTML ="Video A";
-    document.getElementById("videoEmbedA").className += " wistia_async_" + hashedIdA;
+    document.getElementsByClassName("vidA").innerHTML ="Video A";
+    document.getElementsByClassName("videoEmbedA").className += " wistia_async_" + hashedIdA;
     window._wq = window._wq || [];
       _wq.push({
         id: hashedIdA,
       });
 
-    document.getElementById("vidB").innerHTML ="Video B";
-    document.getElementById("videoEmbedB").className += " wistia_async_" + hashedIdB;
+    document.getElementsByClassName("vidB").innerHTML ="Video B";
+    document.getElementsByClassName("videoEmbedB").className += " wistia_async_" + hashedIdB;
     window._wq = window._wq || [];
       _wq.push({
         id: hashedIdB,
@@ -67,5 +67,5 @@ function getEmbedUrl() {
 
 function reset() {
   $('.dynamic').val('');
-  document.getElementById("getEmbed").disabled = true;
+  document.getElementsByClassName("getEmbed").disabled = true;
 }
