@@ -49,7 +49,7 @@
       </form>
 
       <!-- DISPLAY EMBED URL -->
-      <div data-clipboard-target="#url" cta-label="Embed URL Copied" data-balloon="Click to copy" data-balloon-pos="up" class="clipboard code-block" aria-label="Click to copy">
+      <div data-clipboard-target="#url" cta-label="Embed URL Copied" data-balloon="Click to copy" data-balloon-pos="up" class="clipboard" aria-label="Click to copy">
         <pre>
           <code id="url">Embed code</code>
         </pre>
@@ -57,29 +57,27 @@
 
       <div class="video-group">
         <div class="video">
-          <h3 id="vidA"></h3>
+          <h3 id="vidA">Video A</h3>
           <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
-          <div class="wistia_responsive_wrapper style="height: 100%; left: 0; position: absolute; top: 0; width: 100%;">
-            <div id="videoEmbedA" class="wistia_embed videoFoam=true" style="height: 100%; width: 100%;"></div>
+          <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+            <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%;">
+              <div id="videoEmbedA" class="wistia_embed video-frame videoFoam=true" style="height: 100%; width: 100%;"></div>
+            </div>
           </div>
         </div>
 
         <div class="video">
-          <h3 id="vidB"></h3>
-          <div class="wistia_responsive_wrapper style="height: 100%; left: 0; position: absolute; top: 0; width: 100%;">
-            <div id="videoEmbedB" class="wistia_embed videoFoam=true" style="height: 100%; width: 100%;"></div>
+          <h3 id="vidB">Video B</h3>
+          <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+            <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%;">
+              <div id="videoEmbedB" class="wistia_embed video-frame videoFoam=true" style="height: 100%; width: 100%;"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </main>
 
-  <script>
-    var clipboard = new Clipboard('.clipboard');
-    clipboard.on('success', function(e) {
-      e.clearSelection();
-      toastr.success('Copied to clipboard');
-    });
-  </script>
+  <script src="js/clipboard.js"></script>
 </body>
 </html>

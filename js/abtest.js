@@ -45,15 +45,15 @@ function getEmbedUrl() {
 &lt;/script&gt;`;
     
     // DISPLAY VIDEO EMBEDS
-    document.getElementById("vidA").innerHTML ="Video A";
     document.getElementById("videoEmbedA").className += " wistia_async_" + hashedIdA;
+    document.getElementById("videoEmbedA").classList.remove("video-frame");
     window._wq = window._wq || [];
       _wq.push({
         id: hashedIdA,
       });
 
-    document.getElementById("vidB").innerHTML ="Video B";
     document.getElementById("videoEmbedB").className += " wistia_async_" + hashedIdB;
+    document.getElementById("videoEmbedB").classList.remove("video-frame");
     window._wq = window._wq || [];
       _wq.push({
         id: hashedIdB,

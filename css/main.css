@@ -32,7 +32,7 @@ h1 {
   }
 }
 
-.code-block {
+code {
   display: block;
   cursor: pointer;
   margin-top: 32px;
@@ -45,14 +45,11 @@ h1 {
 
 header {
   margin-top: 56px;
+  margin-bottom: 32px;
 
   @media only screen and (max-width: 600px) {
     margin-top: 20px;
   }
-}
-
-header {
-  margin-bottom: 32px;
 }
 
 main {
@@ -61,8 +58,13 @@ main {
 
 .video {
   min-width: 400px;
+  min-height: 225px;
   margin: 24px;
   display: inline-block;
+}
+
+.video-frame {
+  border: 2px dashed #3dbbd0;
 }
 
 .explainer-text ol {
@@ -77,7 +79,7 @@ main {
 
 pre {
   margin: 0;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .primary-text { color: rgba(#000, 0.87); }
